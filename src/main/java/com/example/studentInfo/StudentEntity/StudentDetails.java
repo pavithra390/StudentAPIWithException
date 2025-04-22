@@ -4,8 +4,9 @@ import jakarta.persistence.*;
 @Entity
 @Table
 public class StudentDetails {
-    @Column
-    @Id
+    //Here we are declaring Columns  for our table
+    @Column //Specifying create column in database by using this variable
+    @Id    //Indicating this is(studentId) primary key for our StudentDetails table
     private Integer studentId;
     @Column
     private String studentName;
@@ -15,11 +16,16 @@ public class StudentDetails {
     private Integer studentAge;
     @Column
     private String studentGender;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)//Establishing one to one connection between 2 tables
+    //Joining the Student address table using reference column
+    //Here Id is primary key in StudentAddress table which is foreign key in StudentDetails table
     @JoinColumn(name="Address_Student",referencedColumnName ="Id")
      private StudentAddress studentAddress;
+
+    //Declaring default constructor
     public StudentDetails(){
     }
+    //Declaring Parameterised Constructor
     public StudentDetails(Integer studentId, String studentName, String studentSurname, Integer studentAge, String studentGender,StudentAddress studentAddress) {
         this.studentId = studentId;
         this.studentName = studentName;
@@ -28,6 +34,8 @@ public class StudentDetails {
         this.studentGender = studentGender;
         this.studentAddress=studentAddress;
     }
+
+    //Declaring getters and setters for our variables
 
     public Integer getStudentId() {
 

@@ -4,9 +4,10 @@ import jakarta.persistence.*;
 @Entity
 @Table
 public class StudentAddress {
+    //Here we are declaring Columns  for our table
     @Id
     @Column
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO) //Means we are telling to Hibernet to generate value for primary key automatically
     private int id;
     @Column
     private String country;
@@ -16,10 +17,12 @@ public class StudentAddress {
     private String city;
     @Column
     private String street;
-    public StudentAddress(){}
     @Column
     private int zip;
 
+    //Declaring default constructor
+    public StudentAddress(){}
+    //Declaring Parameterised Constructor
     public StudentAddress(int id, String country, String state, String city, String street, int zip) {
         this.id = id;
         this.country = country;
@@ -28,6 +31,7 @@ public class StudentAddress {
         this.street = street;
         this.zip = zip;
     }
+    //Declaring getters and setters for our variables
     public int getZip() {
         return zip;
     }

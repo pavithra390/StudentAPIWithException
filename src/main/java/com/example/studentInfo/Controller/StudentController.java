@@ -10,7 +10,7 @@ import java.util.Optional;
 @RestController
 public class StudentController {
     @Autowired
-    StudentService ss;
+    StudentService ss;//Injecting service layer in controller layer using @Autowired annotation
     @PostMapping(value="/addingStudentRecord")
     //http://localhost:1991/addingStudentRecord
     public String addingStudentRecord(@RequestBody StudentDetails sd){

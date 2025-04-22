@@ -10,7 +10,7 @@ import java.util.Optional;
 @Service
 public class StudentService {
     @Autowired
-    StudentRepo sr;
+    StudentRepo sr;//Injecting Repository layer in service layer using @Autowired annotation
     public void addingStudentRecord(StudentDetails sd){
         sr.save(sd);
     }
