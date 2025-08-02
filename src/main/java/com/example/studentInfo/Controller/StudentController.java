@@ -31,9 +31,9 @@ public class StudentController {
     public Iterable<StudentDetails> gettingAllRecords(){
         return ss.gettingAllRecords();
      }
-     @DeleteMapping(value="/deletingparticularRecord")
-     //http://localhost:1991/deletingparticularRecord?studentId=37
-    public String deletingParticularRecord(@RequestParam("studentId")Integer id){
+     @DeleteMapping(value="/deletingParticularRecord/{studentId}")
+     //http://localhost:1991/deletingParticularRecord/15800262
+    public String deletingParticularRecord(@PathVariable("studentId")Integer id){
         ss.deleteStudentRecord(id);
         return "record deleted successfully-->"+id;
      }

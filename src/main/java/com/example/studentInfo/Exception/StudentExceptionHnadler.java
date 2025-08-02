@@ -11,6 +11,15 @@ import java.time.LocalDate;
 public class StudentExceptionHnadler {
     @ExceptionHandler(StudentNotFound.class)
     @ResponseBody
+
+
+
+
+
+
+
+
+
     public StudentException handlingException (StudentNotFound ex) {
        StudentException se=new StudentException();
        se.setErrorName(ex.msg);

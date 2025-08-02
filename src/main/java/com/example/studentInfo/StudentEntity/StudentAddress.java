@@ -23,8 +23,8 @@ public class StudentAddress {
     //Declaring default constructor
     public StudentAddress(){}
     //Declaring Parameterised Constructor
-    public StudentAddress(int id, String country, String state, String city, String street, int zip) {
-        this.id = id;
+    public StudentAddress(String country, String state, String city, String street, int zip) {
+        //this.id = id;
         this.country = country;
         this.state = state;
         this.city = city;
@@ -50,7 +50,6 @@ public class StudentAddress {
     public void setCity(String city) {
         this.city = city;
     }
-
     public String getState() {
         return state;
     }
@@ -60,15 +59,14 @@ public class StudentAddress {
     public String getCountry() {
         return country;
     }
-
     public void setCountry(String country) {
         this.country = country;
     }
     public int getId() {
         return id;
     }
-    public void setId(int id) {
-        this.id = id;
-    }
+    //public void setId(int id) {
+        //this.id = id;
+   // }
 
 }
